@@ -110,6 +110,7 @@ def burp_log(filename):
         yield from read_burp_log_gen(f)
 
 def _tail_f(f):
+    # TODO: rewrite with sh
     for l in tailer.follow(f):
         yield l + "\n"
 
